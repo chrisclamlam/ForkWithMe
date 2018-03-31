@@ -65,8 +65,13 @@ export default class MapTab extends React.Component {
     // We should just debounce the event listener here
 
 
-    this.animation.addListener(({ value }) => {
-      let index = Math.floor(value / this.CARD_WIDTH + 0.3); // animate 30% away from landing on the next item
+
+    let statePoints = this.state.points
+
+    let cbHandler = ({ value }) => {
+      console.log('got to listerner!!!', value)
+      debugger;
+      let index = Math.floor(value / this.state.CARD_WIDTH + 0.3); // animate 30% away from landing on the next item
       if (index >= this.state.points.length) {
         index = this.state.points.length - 1;
       }
@@ -74,24 +79,30 @@ export default class MapTab extends React.Component {
         index = 0;
       }
 
+      let statePoints = this.state.points
       clearTimeout(this.regionTimeout);
       this.regionTimeout = setTimeout(() => {
+        // debugger;
+        console.log('STATE POINTS', statePoints)
         if (this.index !== index) {
           this.index = index;
           //GET AN ERROR HERE NEED HELP
-          console.log(this.state.points[0].coordinates);
-          // const { coordinate } = this.state.points[index].coordinates;
-          // this.map.animateToRegion(
-          //   {
-          //     ...coordinate,
-          //     latitudeDelta: this.state.region.latitudeDelta,
-          //     longitudeDelta: this.state.region.longitudeDelta,
-          //   },
-          //   350
-          // );
+          debugger;
+          console.log('state points', statePoints[0].coordinates);
+          const { latitude, longitude } = statePoints[index].coordinates;
+          this._MapView.animateToRegion(
+            {
+              latitude,
+              longitude,
+              latitudeDelta: this.state.initregion.latitudeDelta,
+              longitudeDelta: this.state.initregion.longitudeDelta,
+            },
+            350
+          );
         }
       }, 100);
-    });
+    };
+    this.animation.addListener(cbHandler.bind(this))
   }
 
   _getLocationAsync = async () => {
@@ -159,12 +170,12 @@ export default class MapTab extends React.Component {
         loop={false}
         showsPagination={false}
       >
-        <View style={styles.container}>
+{/*        <View style={styles.container}>
           <WebView
             source={{ uri: this.state.article.link }}
             style={{ marginTop: 20, backgroundColor: 'white', flex: 1 }}
           />
-        </View>
+        </View>*/}
 
         <View style={styles.container}>
           <MapView
@@ -227,7 +238,7 @@ export default class MapTab extends React.Component {
                       <TouchableHighlight underlayColor='transparent' >
                         <View style={{ padding: 0, flexDirection: 'row', justifyContent: 'center', alignContent: 'center' }}>
                           <View style={{ padding: 0, justifyContent: 'center', alignContent: 'center' }}>
-                            <Icon name="information-circle"
+                            <Icon name="ios-boat-outline"
                               onPress={() => { this.props.navigation.push('DetailTab', { restaurant }) }}
                               style={{ backgroundColor: 'transparent', justifyContent: 'center', alignContent: 'center' }} />
                           </View>
@@ -300,7 +311,7 @@ export default class MapTab extends React.Component {
           > 
           {this.state.points.map((restaurant, index) => (
               <View style={styles.card} key={index}>
-                <  Image
+                <Image
                   // {/* //   //IMAGE DOES NOT WORK NEED TO FIX IN THE FURTURE
                   source={{ uri: "https://s3-media2.fl.yelpcdn.com/bphoto/QLZbYL1H5tYrUj-J_mbDWw/o.jpg" }}
                   style={styles.cardImage}
@@ -370,7 +381,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   textContent: {
-    flex: 1,
+    // flex: 1,
   },
   cardtitle: {
     fontSize: 12,
