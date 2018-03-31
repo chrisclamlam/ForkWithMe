@@ -5,7 +5,7 @@ import { MapView } from 'expo';
 // import MapView, { ProviderPropType, Marker, AnimatedRegion } from 'react-native-maps';
 import { Button, Header, SearchBar } from 'react-native-elements';
 import ControlBanner from '../ControlBannerHeader'
-import { Icon } from 'native-base'
+import { Ionicons as Icon } from '@expo/vector-icons'
 import openMap from 'react-native-open-maps';
 import Swiper from 'react-native-swiper';
 import { Constants, Location, Permissions } from 'expo';

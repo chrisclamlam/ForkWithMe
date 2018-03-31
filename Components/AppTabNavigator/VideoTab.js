@@ -1,7 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image, FlatList, ImageBackground, Dimensions, ScrollView, ListView } from 'react-native';
 import { StackNavigator } from 'react-navigation'
-import { Icon, Container, Header, Content, List, ListItem, Form, Button } from 'native-base';
+import { Ionicons as Icon } from '@expo/vector-icons'
+import { Container, Header, Content, List, ListItem, Form, Button } from 'native-base';
 import * as Animatable from 'react-native-animatable';
 
 var events = ["hi", 'fds']

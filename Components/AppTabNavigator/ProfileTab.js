@@ -1,12 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation'
-import { Icon } from 'native-base'
+import { Ionicons as Icon } from '@expo/vector-icons'
 
 export default class ProfileTab extends React.Component {
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
-      <Icon name="md-person" style={{
+      
+      <Icon name="md-home" style={{
         color:
           tintColor, transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }]
       }} />

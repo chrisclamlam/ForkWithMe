@@ -5,11 +5,11 @@ import { MapView } from 'expo';
 // import MapView, { ProviderPropType, Marker, AnimatedRegion } from 'react-native-maps';
 import { Button, Header, SearchBar } from 'react-native-elements';
 import ControlBanner from '../ControlBannerHeader'
-import { Icon } from 'native-base'
+import { Ionicons as Icon } from '@expo/vector-icons'
 import openMap from 'react-native-open-maps';
 import Swiper from 'react-native-swiper';
 import { Constants, Location, Permissions } from 'expo';
-import Stars from 'react-native-stars-rating';
+// import Stars from 'react-native-stars-rating';
 import ActionButton from 'react-native-action-button';
 
 
@@ -234,13 +234,14 @@ export default class MapTab extends React.Component {
                           <View>
                             <Text style={{ marginLeft: 0, fontWeight: 'bold', paddingLeft: 5, paddingTop: 5, paddingRight: 10 }}> {restaurant.name} </Text>
                             <View style={{ marginLeft: 10, marginBottom: 5 }}>
+                            {/*
                               <Stars
                                 isActive={true}
                                 rateMax={5}
                                 isHalfStarEnabled={true}
                                 rate={restaurant.rating}
                                 size={10}
-                              />
+                              /> */}
                             </View>
                             {/* <Text style={{marginLeft:0,paddingLeft:10, paddingBottom:5}}> Rating: {restaurant.rating.toString()}</Text> */}
                           </View>

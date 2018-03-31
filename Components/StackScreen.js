@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation'
-import { Icon } from 'native-base'
+import { Ionicons as Icon } from '@expo/vector-icons'
 import { TabNavigator } from 'react-navigation'
 
 import MainScreen from './MainScreen';

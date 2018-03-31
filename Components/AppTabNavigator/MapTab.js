@@ -4,7 +4,7 @@ import { StackNavigator } from 'react-navigation'
 import { MapView } from 'expo';
 import { Button, Header, SearchBar } from 'react-native-elements';
 import ControlBanner from '../ControlBannerHeader'
-import { Icon } from 'native-base'
+import { Ionicons as Icon } from '@expo/vector-icons'
 import openMap from 'react-native-open-maps';
 import Swiper from 'react-native-swiper';
 

@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, TouchableHighlight, Image, FlatList, ImageBackg
 import { StackNavigator } from 'react-navigation'
 import GridView from 'react-native-super-grid';
 import Swiper from 'react-native-swiper';
-import { Icon, Container, Header, Content, List, ListItem, Card, Form, Button } from 'native-base';
+import { Container, Header, Content, List, ListItem, Card, Form, Button } from 'native-base';
+import { Ionicons as Icon } from '@expo/vector-icons'
 import SideSwipe from 'react-native-sideswipe';
 import { SearchBar } from 'react-native-elements'
 import * as firebase from 'firebase';

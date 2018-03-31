@@ -10,7 +10,7 @@ import {
   Image,
   TouchableHighlight,
 } from 'react-native';
-import { Icon } from 'native-base'
+import { Ionicons as Icon } from '@expo/vector-icons'
 
 export default class ControlBanner extends React.Component {
 

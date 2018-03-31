@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, Image, ScrollView } from 'react-native';
 import { StackNavigator } from 'react-navigation'
-import { Icon } from 'native-base'
+import { Ionicons as Icon } from '@expo/vector-icons'
 import Carousel from 'react-native-snap-carousel';
 import Stars from 'react-native-stars-rating';
 import Swiper from 'react-native-swiper';
@@ -13,14 +13,13 @@ export default class SocialTab extends React.Component {
 
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
-      <Icon name="md-person" style={{
+      <Icon name="md-home" style={{
         color:
           tintColor, transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }]
       }} />
     )
   }
   render() {
-
     return (
       <ScrollView style={styles.container}>
 
@@ -32,8 +31,8 @@ export default class SocialTab extends React.Component {
             loop={true} autoplay={false}
             autoplayTimeout={5}
             // nextButton = {<Text style={{color:'white',fontSize: 60}}>›</Text>}
-            nextButton={<Icon name="arrow-dropright" style={{ color: 'white', fontSize: 20 }} />}
-            prevButton={<Icon name="arrow-dropleft" style={{ color: 'white', fontSize: 20 }} />}
+            nextButton={<Icon name="arrow-with-circle-right" style={{ color: 'white', fontSize: 20 }} />}
+            prevButton={<Icon name="arrow-with-circle-left" style={{ color: 'white', fontSize: 20 }} />}
           >
             <View style={styles.slide2}>
               <Image style={{ flex: 1 }} source={{ uri: 'https://s3-media4.fl.yelpcdn.com/bphoto/l4cf_tzaRp4iQpVVQaZsmA/o.jpg' }} />
@@ -55,7 +54,7 @@ export default class SocialTab extends React.Component {
         <View style={{ height: 100 }}>
           <Text style={styles.heading}> Shrimp Daddy</Text>
           <View style={{ marginLeft: '3.5%', marginBottom: 5, flexDirection: 'row' }}>
-            <Stars isActive={true} rateMax={5} isHalfStarEnabled={true} rate={4} size={15} />
+           {/*  Stars go here: <Stars isActive={true} rateMax={5} isHalfStarEnabled={true} rate={4} size={15} /> */}
             <Text> (35) </Text>
           </View>
         </View>

@@ -1,8 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, ScrollView,Animated } from 'react-native';
 import { StackNavigator } from 'react-navigation'
-import { Container, Content, Icon } from 'native-base'
+import { Container, Content } from 'native-base'
 import CardComponent from '../CardComponent'
+import { Ionicons as Icon } from '@expo/vector-icons'
 import CardSwiper from '../CardSwiper'
 import SideSwipe from 'react-native-sideswipe';
 import Swiper from 'react-native-swiper';
@@ -79,8 +80,8 @@ export default class HomeTab extends React.Component {
               loop={true} autoplay={false}
               autoplayTimeout={5}
               // nextButton = {<Text style={{color:'white',fontSize: 60}}>›</Text>}
-              nextButton={<Icon name="arrow-dropright" style={{ color: 'white', fontSize: 20 }} />}
-              prevButton={<Icon name="arrow-dropleft" style={{ color: 'white', fontSize: 20 }} />}
+              nextButton={<Icon name="md-home" style={{ color: 'white', fontSize: 20 }} />}
+              prevButton={<Icon name="md-home" style={{ color: 'white', fontSize: 20 }} />}
 
 
             >

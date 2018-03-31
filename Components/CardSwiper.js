@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, TouchableHighlight, View, WebView, Image } from 'react-native';
-import { Card, CardItem, Thumbnail, Body, Left, Right, Button, Icon } from 'native-base';
+import { Card, CardItem, Thumbnail, Body, Left, Right, Button } from 'native-base';
 import Swiper from 'react-native-swiper';
 
 
