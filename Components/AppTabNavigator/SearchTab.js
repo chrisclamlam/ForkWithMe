@@ -32,13 +32,14 @@ export default class SearchTab extends React.Component {
 
     this.state = {
       listViewData: data,
+      listViewDataFull: data,
       searchText: "",
     }
   }
 
   static navigationOptions = {
     tabBarIcon: ({ tintColor }) => (
-      <Icon name="md-search" style={{
+      <Icon name="md-home" style={{
         color:
           tintColor, transform: [{ scaleX: 0.8 }, { scaleY: 0.8 }]
       }} />
@@ -57,7 +58,7 @@ export default class SearchTab extends React.Component {
       var newData = [...that.state.listViewData]
 
       newData.push(data)
-      that.setState({ listViewData: newData })
+      that.setState({ listViewDataFull: newData })
     })
   }
 
@@ -85,7 +86,9 @@ export default class SearchTab extends React.Component {
           containerStyle={{ backgroundColor: 'transparent', borderTopColor: 'transparent', borderBottomColor: 'transparent' }}
           inputStyle={{ backgroundColor: 'transparent' }}
           placeholder='Articles'
-          onChangeText={(text) => this.setState({ searchText: text })}
+          onChangeText={(text) => this.setState({ searchText: text, listViewData: this.state.listViewData.filter((item) => {
+            return item.val().name.indexOf(text) != -1
+          }) })}
           onSubmitEditing={() => this.searchDB()}
         />
 
@@ -105,7 +108,7 @@ export default class SearchTab extends React.Component {
             }
             renderLeftHiddenRow={data =>
               <Button full>
-                <Icon name="ios-eye" />
+                <Icon name="md-home" />
               </Button>
             }
             disableLeftSwipe={true}
